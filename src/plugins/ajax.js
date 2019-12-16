@@ -17,7 +17,6 @@ methods.forEach((method) => {
         // if (url.indexOf('/fund') === 0) {
         //     axios.defaults.baseURL = '/fundApi'
         // }
-
         const request = method === 'get' ? axios.get(url, { params: pms })
             : method === 'post' ? axios.post(url, pms, ops)
                 : axios.delete(url, { data: pms })

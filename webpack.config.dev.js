@@ -1,6 +1,6 @@
 {
   mode: 'development',
-  context: 'E:\\example\\crawler',
+  context: 'E:\\example\\bigtree',
   node: {
     setImmediate: false,
     process: 'mock',
@@ -11,16 +11,17 @@
     child_process: 'empty'
   },
   output: {
-    path: 'E:\\example\\crawler\\dist',
+    path: 'E:\\example\\bigtree\\dist',
     filename: 'js/[name].js',
     publicPath: '/',
     chunkFilename: 'js/[name].js'
   },
   resolve: {
     alias: {
-      '@': 'E:\\example\\crawler\\src',
+      '@': 'E:\\example\\bigtree\\src',
       vue$: 'vue/dist/vue.runtime.esm.js',
-      '@c': 'E:\\example\\crawler\\src\\components'
+      '@c': 'E:\\example\\bigtree\\src\\components',
+      'public': 'E:\\example\\bigtree\\public'
     },
     extensions: [
       '.mjs',
@@ -32,16 +33,16 @@
     ],
     modules: [
       'node_modules',
-      'E:\\example\\crawler\\node_modules',
-      'E:\\example\\crawler\\node_modules\\@vue\\cli-service\\node_modules'
+      'E:\\example\\bigtree\\node_modules',
+      'E:\\example\\bigtree\\node_modules\\@vue\\cli-service\\node_modules'
     ]
   },
   resolveLoader: {
     modules: [
-      'E:\\example\\crawler\\node_modules\\@vue\\cli-plugin-babel\\node_modules',
+      'E:\\example\\bigtree\\node_modules\\@vue\\cli-plugin-babel\\node_modules',
       'node_modules',
-      'E:\\example\\crawler\\node_modules',
-      'E:\\example\\crawler\\node_modules\\@vue\\cli-service\\node_modules'
+      'E:\\example\\bigtree\\node_modules',
+      'E:\\example\\bigtree\\node_modules\\@vue\\cli-service\\node_modules'
     ]
   },
   module: {
@@ -52,20 +53,20 @@
         test: /\.vue$/,
         use: [
           {
-            loader: 'cache-loader',
+            loader: 'E:\\example\\bigtree\\node_modules\\cache-loader\\dist\\cjs.js',
             options: {
-              cacheDirectory: 'E:\\example\\crawler\\node_modules\\.cache\\vue-loader',
-              cacheIdentifier: '337962ac'
+              cacheDirectory: 'E:\\example\\bigtree\\node_modules\\.cache\\vue-loader',
+              cacheIdentifier: '4967e305'
             }
           },
           {
-            loader: 'vue-loader',
+            loader: 'E:\\example\\bigtree\\node_modules\\vue-loader\\lib\\index.js',
             options: {
               compilerOptions: {
                 whitespace: 'condense'
               },
-              cacheDirectory: 'E:\\example\\crawler\\node_modules\\.cache\\vue-loader',
-              cacheIdentifier: '337962ac'
+              cacheDirectory: 'E:\\example\\bigtree\\node_modules\\.cache\\vue-loader',
+              cacheIdentifier: '4967e305'
             }
           }
         ]
@@ -75,7 +76,7 @@
         test: /\.(png|jpe?g|gif|webp)(\?.*)?$/,
         use: [
           {
-            loader: 'url-loader',
+            loader: 'E:\\example\\bigtree\\node_modules\\url-loader\\dist\\cjs.js',
             options: {
               limit: 4096,
               fallback: {
@@ -93,7 +94,7 @@
         test: /\.(svg)(\?.*)?$/,
         use: [
           {
-            loader: 'file-loader',
+            loader: 'E:\\example\\bigtree\\node_modules\\file-loader\\dist\\cjs.js',
             options: {
               name: 'img/[name].[hash:8].[ext]'
             }
@@ -105,7 +106,7 @@
         test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
         use: [
           {
-            loader: 'url-loader',
+            loader: 'E:\\example\\bigtree\\node_modules\\url-loader\\dist\\cjs.js',
             options: {
               limit: 4096,
               fallback: {
@@ -123,7 +124,7 @@
         test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/i,
         use: [
           {
-            loader: 'url-loader',
+            loader: 'E:\\example\\bigtree\\node_modules\\url-loader\\dist\\cjs.js',
             options: {
               limit: 4096,
               fallback: {
@@ -171,14 +172,14 @@
             resourceQuery: /module/,
             use: [
               {
-                loader: 'vue-style-loader',
+                loader: 'E:\\example\\bigtree\\node_modules\\vue-style-loader\\index.js',
                 options: {
                   sourceMap: false,
                   shadowMode: false
                 }
               },
               {
-                loader: 'css-loader',
+                loader: 'E:\\example\\bigtree\\node_modules\\css-loader\\dist\\cjs.js',
                 options: {
                   sourceMap: false,
                   importLoaders: 2,
@@ -188,7 +189,7 @@
                 }
               },
               {
-                loader: 'postcss-loader',
+                loader: 'E:\\example\\bigtree\\node_modules\\postcss-loader\\src\\index.js',
                 options: {
                   sourceMap: false
                 }
@@ -200,21 +201,21 @@
             resourceQuery: /\?vue/,
             use: [
               {
-                loader: 'vue-style-loader',
+                loader: 'E:\\example\\bigtree\\node_modules\\vue-style-loader\\index.js',
                 options: {
                   sourceMap: false,
                   shadowMode: false
                 }
               },
               {
-                loader: 'css-loader',
+                loader: 'E:\\example\\bigtree\\node_modules\\css-loader\\dist\\cjs.js',
                 options: {
                   sourceMap: false,
                   importLoaders: 2
                 }
               },
               {
-                loader: 'postcss-loader',
+                loader: 'E:\\example\\bigtree\\node_modules\\postcss-loader\\src\\index.js',
                 options: {
                   sourceMap: false
                 }
@@ -226,14 +227,14 @@
             test: /\.module\.\w+$/,
             use: [
               {
-                loader: 'vue-style-loader',
+                loader: 'E:\\example\\bigtree\\node_modules\\vue-style-loader\\index.js',
                 options: {
                   sourceMap: false,
                   shadowMode: false
                 }
               },
               {
-                loader: 'css-loader',
+                loader: 'E:\\example\\bigtree\\node_modules\\css-loader\\dist\\cjs.js',
                 options: {
                   sourceMap: false,
                   importLoaders: 2,
@@ -243,7 +244,7 @@
                 }
               },
               {
-                loader: 'postcss-loader',
+                loader: 'E:\\example\\bigtree\\node_modules\\postcss-loader\\src\\index.js',
                 options: {
                   sourceMap: false
                 }
@@ -254,21 +255,21 @@
           {
             use: [
               {
-                loader: 'vue-style-loader',
+                loader: 'E:\\example\\bigtree\\node_modules\\vue-style-loader\\index.js',
                 options: {
                   sourceMap: false,
                   shadowMode: false
                 }
               },
               {
-                loader: 'css-loader',
+                loader: 'E:\\example\\bigtree\\node_modules\\css-loader\\dist\\cjs.js',
                 options: {
                   sourceMap: false,
                   importLoaders: 2
                 }
               },
               {
-                loader: 'postcss-loader',
+                loader: 'E:\\example\\bigtree\\node_modules\\postcss-loader\\src\\index.js',
                 options: {
                   sourceMap: false
                 }
@@ -286,14 +287,14 @@
             resourceQuery: /module/,
             use: [
               {
-                loader: 'vue-style-loader',
+                loader: 'E:\\example\\bigtree\\node_modules\\vue-style-loader\\index.js',
                 options: {
                   sourceMap: false,
                   shadowMode: false
                 }
               },
               {
-                loader: 'css-loader',
+                loader: 'E:\\example\\bigtree\\node_modules\\css-loader\\dist\\cjs.js',
                 options: {
                   sourceMap: false,
                   importLoaders: 2,
@@ -303,7 +304,7 @@
                 }
               },
               {
-                loader: 'postcss-loader',
+                loader: 'E:\\example\\bigtree\\node_modules\\postcss-loader\\src\\index.js',
                 options: {
                   sourceMap: false
                 }
@@ -315,21 +316,21 @@
             resourceQuery: /\?vue/,
             use: [
               {
-                loader: 'vue-style-loader',
+                loader: 'E:\\example\\bigtree\\node_modules\\vue-style-loader\\index.js',
                 options: {
                   sourceMap: false,
                   shadowMode: false
                 }
               },
               {
-                loader: 'css-loader',
+                loader: 'E:\\example\\bigtree\\node_modules\\css-loader\\dist\\cjs.js',
                 options: {
                   sourceMap: false,
                   importLoaders: 2
                 }
               },
               {
-                loader: 'postcss-loader',
+                loader: 'E:\\example\\bigtree\\node_modules\\postcss-loader\\src\\index.js',
                 options: {
                   sourceMap: false
                 }
@@ -341,14 +342,14 @@
             test: /\.module\.\w+$/,
             use: [
               {
-                loader: 'vue-style-loader',
+                loader: 'E:\\example\\bigtree\\node_modules\\vue-style-loader\\index.js',
                 options: {
                   sourceMap: false,
                   shadowMode: false
                 }
               },
               {
-                loader: 'css-loader',
+                loader: 'E:\\example\\bigtree\\node_modules\\css-loader\\dist\\cjs.js',
                 options: {
                   sourceMap: false,
                   importLoaders: 2,
@@ -358,7 +359,7 @@
                 }
               },
               {
-                loader: 'postcss-loader',
+                loader: 'E:\\example\\bigtree\\node_modules\\postcss-loader\\src\\index.js',
                 options: {
                   sourceMap: false
                 }
@@ -369,21 +370,21 @@
           {
             use: [
               {
-                loader: 'vue-style-loader',
+                loader: 'E:\\example\\bigtree\\node_modules\\vue-style-loader\\index.js',
                 options: {
                   sourceMap: false,
                   shadowMode: false
                 }
               },
               {
-                loader: 'css-loader',
+                loader: 'E:\\example\\bigtree\\node_modules\\css-loader\\dist\\cjs.js',
                 options: {
                   sourceMap: false,
                   importLoaders: 2
                 }
               },
               {
-                loader: 'postcss-loader',
+                loader: 'E:\\example\\bigtree\\node_modules\\postcss-loader\\src\\index.js',
                 options: {
                   sourceMap: false
                 }
@@ -401,14 +402,14 @@
             resourceQuery: /module/,
             use: [
               {
-                loader: 'vue-style-loader',
+                loader: 'E:\\example\\bigtree\\node_modules\\vue-style-loader\\index.js',
                 options: {
                   sourceMap: false,
                   shadowMode: false
                 }
               },
               {
-                loader: 'css-loader',
+                loader: 'E:\\example\\bigtree\\node_modules\\css-loader\\dist\\cjs.js',
                 options: {
                   sourceMap: false,
                   importLoaders: 2,
@@ -418,13 +419,13 @@
                 }
               },
               {
-                loader: 'postcss-loader',
+                loader: 'E:\\example\\bigtree\\node_modules\\postcss-loader\\src\\index.js',
                 options: {
                   sourceMap: false
                 }
               },
               {
-                loader: 'sass-loader',
+                loader: 'E:\\example\\bigtree\\node_modules\\sass-loader\\dist\\cjs.js',
                 options: {
                   sourceMap: false
                 }
@@ -436,27 +437,27 @@
             resourceQuery: /\?vue/,
             use: [
               {
-                loader: 'vue-style-loader',
+                loader: 'E:\\example\\bigtree\\node_modules\\vue-style-loader\\index.js',
                 options: {
                   sourceMap: false,
                   shadowMode: false
                 }
               },
               {
-                loader: 'css-loader',
+                loader: 'E:\\example\\bigtree\\node_modules\\css-loader\\dist\\cjs.js',
                 options: {
                   sourceMap: false,
                   importLoaders: 2
                 }
               },
               {
-                loader: 'postcss-loader',
+                loader: 'E:\\example\\bigtree\\node_modules\\postcss-loader\\src\\index.js',
                 options: {
                   sourceMap: false
                 }
               },
               {
-                loader: 'sass-loader',
+                loader: 'E:\\example\\bigtree\\node_modules\\sass-loader\\dist\\cjs.js',
                 options: {
                   sourceMap: false
                 }
@@ -468,14 +469,14 @@
             test: /\.module\.\w+$/,
             use: [
               {
-                loader: 'vue-style-loader',
+                loader: 'E:\\example\\bigtree\\node_modules\\vue-style-loader\\index.js',
                 options: {
                   sourceMap: false,
                   shadowMode: false
                 }
               },
               {
-                loader: 'css-loader',
+                loader: 'E:\\example\\bigtree\\node_modules\\css-loader\\dist\\cjs.js',
                 options: {
                   sourceMap: false,
                   importLoaders: 2,
@@ -485,13 +486,13 @@
                 }
               },
               {
-                loader: 'postcss-loader',
+                loader: 'E:\\example\\bigtree\\node_modules\\postcss-loader\\src\\index.js',
                 options: {
                   sourceMap: false
                 }
               },
               {
-                loader: 'sass-loader',
+                loader: 'E:\\example\\bigtree\\node_modules\\sass-loader\\dist\\cjs.js',
                 options: {
                   sourceMap: false
                 }
@@ -502,27 +503,27 @@
           {
             use: [
               {
-                loader: 'vue-style-loader',
+                loader: 'E:\\example\\bigtree\\node_modules\\vue-style-loader\\index.js',
                 options: {
                   sourceMap: false,
                   shadowMode: false
                 }
               },
               {
-                loader: 'css-loader',
+                loader: 'E:\\example\\bigtree\\node_modules\\css-loader\\dist\\cjs.js',
                 options: {
                   sourceMap: false,
                   importLoaders: 2
                 }
               },
               {
-                loader: 'postcss-loader',
+                loader: 'E:\\example\\bigtree\\node_modules\\postcss-loader\\src\\index.js',
                 options: {
                   sourceMap: false
                 }
               },
               {
-                loader: 'sass-loader',
+                loader: 'E:\\example\\bigtree\\node_modules\\sass-loader\\dist\\cjs.js',
                 options: {
                   sourceMap: false
                 }
@@ -540,14 +541,14 @@
             resourceQuery: /module/,
             use: [
               {
-                loader: 'vue-style-loader',
+                loader: 'E:\\example\\bigtree\\node_modules\\vue-style-loader\\index.js',
                 options: {
                   sourceMap: false,
                   shadowMode: false
                 }
               },
               {
-                loader: 'css-loader',
+                loader: 'E:\\example\\bigtree\\node_modules\\css-loader\\dist\\cjs.js',
                 options: {
                   sourceMap: false,
                   importLoaders: 2,
@@ -557,13 +558,13 @@
                 }
               },
               {
-                loader: 'postcss-loader',
+                loader: 'E:\\example\\bigtree\\node_modules\\postcss-loader\\src\\index.js',
                 options: {
                   sourceMap: false
                 }
               },
               {
-                loader: 'sass-loader',
+                loader: 'E:\\example\\bigtree\\node_modules\\sass-loader\\dist\\cjs.js',
                 options: {
                   sourceMap: false,
                   sassOptions: {
@@ -578,27 +579,27 @@
             resourceQuery: /\?vue/,
             use: [
               {
-                loader: 'vue-style-loader',
+                loader: 'E:\\example\\bigtree\\node_modules\\vue-style-loader\\index.js',
                 options: {
                   sourceMap: false,
                   shadowMode: false
                 }
               },
               {
-                loader: 'css-loader',
+                loader: 'E:\\example\\bigtree\\node_modules\\css-loader\\dist\\cjs.js',
                 options: {
                   sourceMap: false,
                   importLoaders: 2
                 }
               },
               {
-                loader: 'postcss-loader',
+                loader: 'E:\\example\\bigtree\\node_modules\\postcss-loader\\src\\index.js',
                 options: {
                   sourceMap: false
                 }
               },
               {
-                loader: 'sass-loader',
+                loader: 'E:\\example\\bigtree\\node_modules\\sass-loader\\dist\\cjs.js',
                 options: {
                   sourceMap: false,
                   sassOptions: {
@@ -613,14 +614,14 @@
             test: /\.module\.\w+$/,
             use: [
               {
-                loader: 'vue-style-loader',
+                loader: 'E:\\example\\bigtree\\node_modules\\vue-style-loader\\index.js',
                 options: {
                   sourceMap: false,
                   shadowMode: false
                 }
               },
               {
-                loader: 'css-loader',
+                loader: 'E:\\example\\bigtree\\node_modules\\css-loader\\dist\\cjs.js',
                 options: {
                   sourceMap: false,
                   importLoaders: 2,
@@ -630,13 +631,13 @@
                 }
               },
               {
-                loader: 'postcss-loader',
+                loader: 'E:\\example\\bigtree\\node_modules\\postcss-loader\\src\\index.js',
                 options: {
                   sourceMap: false
                 }
               },
               {
-                loader: 'sass-loader',
+                loader: 'E:\\example\\bigtree\\node_modules\\sass-loader\\dist\\cjs.js',
                 options: {
                   sourceMap: false,
                   sassOptions: {
@@ -650,27 +651,27 @@
           {
             use: [
               {
-                loader: 'vue-style-loader',
+                loader: 'E:\\example\\bigtree\\node_modules\\vue-style-loader\\index.js',
                 options: {
                   sourceMap: false,
                   shadowMode: false
                 }
               },
               {
-                loader: 'css-loader',
+                loader: 'E:\\example\\bigtree\\node_modules\\css-loader\\dist\\cjs.js',
                 options: {
                   sourceMap: false,
                   importLoaders: 2
                 }
               },
               {
-                loader: 'postcss-loader',
+                loader: 'E:\\example\\bigtree\\node_modules\\postcss-loader\\src\\index.js',
                 options: {
                   sourceMap: false
                 }
               },
               {
-                loader: 'sass-loader',
+                loader: 'E:\\example\\bigtree\\node_modules\\sass-loader\\dist\\cjs.js',
                 options: {
                   sourceMap: false,
                   sassOptions: {
@@ -691,14 +692,14 @@
             resourceQuery: /module/,
             use: [
               {
-                loader: 'vue-style-loader',
+                loader: 'E:\\example\\bigtree\\node_modules\\vue-style-loader\\index.js',
                 options: {
                   sourceMap: false,
                   shadowMode: false
                 }
               },
               {
-                loader: 'css-loader',
+                loader: 'E:\\example\\bigtree\\node_modules\\css-loader\\dist\\cjs.js',
                 options: {
                   sourceMap: false,
                   importLoaders: 2,
@@ -708,7 +709,7 @@
                 }
               },
               {
-                loader: 'postcss-loader',
+                loader: 'E:\\example\\bigtree\\node_modules\\postcss-loader\\src\\index.js',
                 options: {
                   sourceMap: false
                 }
@@ -726,21 +727,21 @@
             resourceQuery: /\?vue/,
             use: [
               {
-                loader: 'vue-style-loader',
+                loader: 'E:\\example\\bigtree\\node_modules\\vue-style-loader\\index.js',
                 options: {
                   sourceMap: false,
                   shadowMode: false
                 }
               },
               {
-                loader: 'css-loader',
+                loader: 'E:\\example\\bigtree\\node_modules\\css-loader\\dist\\cjs.js',
                 options: {
                   sourceMap: false,
                   importLoaders: 2
                 }
               },
               {
-                loader: 'postcss-loader',
+                loader: 'E:\\example\\bigtree\\node_modules\\postcss-loader\\src\\index.js',
                 options: {
                   sourceMap: false
                 }
@@ -758,14 +759,14 @@
             test: /\.module\.\w+$/,
             use: [
               {
-                loader: 'vue-style-loader',
+                loader: 'E:\\example\\bigtree\\node_modules\\vue-style-loader\\index.js',
                 options: {
                   sourceMap: false,
                   shadowMode: false
                 }
               },
               {
-                loader: 'css-loader',
+                loader: 'E:\\example\\bigtree\\node_modules\\css-loader\\dist\\cjs.js',
                 options: {
                   sourceMap: false,
                   importLoaders: 2,
@@ -775,7 +776,7 @@
                 }
               },
               {
-                loader: 'postcss-loader',
+                loader: 'E:\\example\\bigtree\\node_modules\\postcss-loader\\src\\index.js',
                 options: {
                   sourceMap: false
                 }
@@ -792,21 +793,21 @@
           {
             use: [
               {
-                loader: 'vue-style-loader',
+                loader: 'E:\\example\\bigtree\\node_modules\\vue-style-loader\\index.js',
                 options: {
                   sourceMap: false,
                   shadowMode: false
                 }
               },
               {
-                loader: 'css-loader',
+                loader: 'E:\\example\\bigtree\\node_modules\\css-loader\\dist\\cjs.js',
                 options: {
                   sourceMap: false,
                   importLoaders: 2
                 }
               },
               {
-                loader: 'postcss-loader',
+                loader: 'E:\\example\\bigtree\\node_modules\\postcss-loader\\src\\index.js',
                 options: {
                   sourceMap: false
                 }
@@ -830,14 +831,14 @@
             resourceQuery: /module/,
             use: [
               {
-                loader: 'vue-style-loader',
+                loader: 'E:\\example\\bigtree\\node_modules\\vue-style-loader\\index.js',
                 options: {
                   sourceMap: false,
                   shadowMode: false
                 }
               },
               {
-                loader: 'css-loader',
+                loader: 'E:\\example\\bigtree\\node_modules\\css-loader\\dist\\cjs.js',
                 options: {
                   sourceMap: false,
                   importLoaders: 2,
@@ -847,7 +848,7 @@
                 }
               },
               {
-                loader: 'postcss-loader',
+                loader: 'E:\\example\\bigtree\\node_modules\\postcss-loader\\src\\index.js',
                 options: {
                   sourceMap: false
                 }
@@ -866,21 +867,21 @@
             resourceQuery: /\?vue/,
             use: [
               {
-                loader: 'vue-style-loader',
+                loader: 'E:\\example\\bigtree\\node_modules\\vue-style-loader\\index.js',
                 options: {
                   sourceMap: false,
                   shadowMode: false
                 }
               },
               {
-                loader: 'css-loader',
+                loader: 'E:\\example\\bigtree\\node_modules\\css-loader\\dist\\cjs.js',
                 options: {
                   sourceMap: false,
                   importLoaders: 2
                 }
               },
               {
-                loader: 'postcss-loader',
+                loader: 'E:\\example\\bigtree\\node_modules\\postcss-loader\\src\\index.js',
                 options: {
                   sourceMap: false
                 }
@@ -899,14 +900,14 @@
             test: /\.module\.\w+$/,
             use: [
               {
-                loader: 'vue-style-loader',
+                loader: 'E:\\example\\bigtree\\node_modules\\vue-style-loader\\index.js',
                 options: {
                   sourceMap: false,
                   shadowMode: false
                 }
               },
               {
-                loader: 'css-loader',
+                loader: 'E:\\example\\bigtree\\node_modules\\css-loader\\dist\\cjs.js',
                 options: {
                   sourceMap: false,
                   importLoaders: 2,
@@ -916,7 +917,7 @@
                 }
               },
               {
-                loader: 'postcss-loader',
+                loader: 'E:\\example\\bigtree\\node_modules\\postcss-loader\\src\\index.js',
                 options: {
                   sourceMap: false
                 }
@@ -934,21 +935,21 @@
           {
             use: [
               {
-                loader: 'vue-style-loader',
+                loader: 'E:\\example\\bigtree\\node_modules\\vue-style-loader\\index.js',
                 options: {
                   sourceMap: false,
                   shadowMode: false
                 }
               },
               {
-                loader: 'css-loader',
+                loader: 'E:\\example\\bigtree\\node_modules\\css-loader\\dist\\cjs.js',
                 options: {
                   sourceMap: false,
                   importLoaders: 2
                 }
               },
               {
-                loader: 'postcss-loader',
+                loader: 'E:\\example\\bigtree\\node_modules\\postcss-loader\\src\\index.js',
                 options: {
                   sourceMap: false
                 }
@@ -969,82 +970,41 @@
         test: /\.m?jsx?$/,
         exclude: [
           filepath => {
-            // always transpile js in vue files
-            if (/\.vue\.jsx?$/.test(filepath)) {
-              return false
-            }
-            // exclude dynamic entries from cli-service
-            if (filepath.startsWith(cliServicePath)) {
-              return true
-            }
-            // check if this is something the user explicitly wants to transpile
-            if (transpileDepRegex && transpileDepRegex.test(filepath)) {
-              return false
-            }
-            // Don't transpile node_modules
-            return /node_modules/.test(filepath)
-          }
+                      // always transpile js in vue files
+                      if (/\.vue\.jsx?$/.test(filepath)) {
+                        return false
+                      }
+                      // exclude dynamic entries from cli-service
+                      if (filepath.startsWith(cliServicePath)) {
+                        return true
+                      }
+          
+                      // only include @babel/runtime when the @vue/babel-preset-app preset is used
+                      if (
+                        process.env.VUE_CLI_TRANSPILE_BABEL_RUNTIME &&
+                        filepath.includes(path.join('@babel', 'runtime'))
+                      ) {
+                        return false
+                      }
+          
+                      // check if this is something the user explicitly wants to transpile
+                      if (transpileDepRegex && transpileDepRegex.test(filepath)) {
+                        return false
+                      }
+                      // Don't transpile node_modules
+                      return /node_modules/.test(filepath)
+                    }
         ],
         use: [
           {
-            loader: 'cache-loader',
+            loader: 'E:\\example\\bigtree\\node_modules\\cache-loader\\dist\\cjs.js',
             options: {
-              cacheDirectory: 'E:\\example\\crawler\\node_modules\\.cache\\babel-loader',
-              cacheIdentifier: '1fc60d3a'
+              cacheDirectory: 'E:\\example\\bigtree\\node_modules\\.cache\\babel-loader',
+              cacheIdentifier: 'e2a2431a'
             }
           },
           {
-            loader: 'babel-loader'
-          }
-        ]
-      },
-      /* config.module.rule('eslint') */
-      {
-        enforce: 'pre',
-        test: /\.(vue|(j|t)sx?)$/,
-        exclude: [
-          /node_modules/,
-          'E:\\example\\crawler\\node_modules\\@vue\\cli-service\\lib'
-        ],
-        use: [
-          {
-            loader: 'E:\\example\\crawler\\node_modules\\eslint-loader\\index.js',
-            options: {
-              extensions: [
-                '.js',
-                '.jsx',
-                '.vue'
-              ],
-              cache: true,
-              cacheIdentifier: '571330d1',
-              emitWarning: false,
-              emitError: false,
-              eslintPath: 'E:\\example\\crawler\\node_modules\\eslint',
-              formatter: function (results) {
-                  let errors = 0;
-                  let warnings = 0;
-                  let fixableErrors = 0;
-                  let fixableWarnings = 0;
-              
-                  const resultsWithMessages = results.filter(result => result.messages.length > 0);
-              
-                  let output = resultsWithMessages.reduce((resultsOutput, result) => {
-                      const messages = result.messages.map(message => `${formatMessage(message, result)}\n\n`);
-              
-                      errors += result.errorCount;
-                      warnings += result.warningCount;
-                      fixableErrors += result.fixableErrorCount;
-                      fixableWarnings += result.fixableWarningCount;
-              
-                      return resultsOutput.concat(messages);
-                  }, []).join("\n");
-              
-                  output += "\n";
-                  output += formatSummary(errors, warnings, fixableErrors, fixableWarnings);
-              
-                  return (errors + warnings) > 0 ? output : "";
-              }
-            }
+            loader: 'E:\\example\\bigtree\\node_modules\\babel-loader\\lib\\index.js'
           }
         ]
       }
@@ -1191,7 +1151,7 @@
             }
           }, resolveClientEnv(options, true /* raw */))
         },
-        template: 'E:\\example\\crawler\\public\\index.html'
+        template: 'E:\\example\\bigtree\\public\\index.html'
       }
     ),
     /* config.plugin('preload') */
@@ -1216,8 +1176,8 @@
     new CopyPlugin(
       [
         {
-          from: 'E:\\example\\crawler\\public',
-          to: 'E:\\example\\crawler\\dist',
+          from: 'E:\\example\\bigtree\\public',
+          to: 'E:\\example\\bigtree\\dist',
           toType: 'dir',
           ignore: [
             '.DS_Store',
@@ -1234,5 +1194,12 @@
     app: [
       './src/main.js'
     ]
+  },
+  devServer: {
+    proxy: {
+      '/msg': {
+        target: 'http://localhost:3000'
+      }
+    }
   }
 }

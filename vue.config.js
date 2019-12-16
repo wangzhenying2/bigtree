@@ -5,7 +5,8 @@ module.exports = {
     configureWebpack: {
         resolve: {
             alias: {
-                '@c': path.resolve(__dirname, './src/components')
+                '@c': path.resolve(__dirname, './src/components'),
+                'public': path.resolve(__dirname, './public')
             }
         },
         devServer: {

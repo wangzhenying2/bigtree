@@ -10,7 +10,17 @@ import {
     Submenu,
     MenuItem,
     MenuItemGroup,
-    Divider
+    Divider,
+    Carousel,
+    CarouselItem,
+    Card,
+    Drawer,
+    Form,
+    FormItem,
+    Input,
+    Radio,
+    RadioGroup,
+    RadioButton
 } from 'element-ui'
 
 Vue.use(Container);
@@ -24,3 +34,13 @@ Vue.use(Submenu);
 Vue.use(MenuItem);
 Vue.use(MenuItemGroup);
 Vue.use(Divider);
+Vue.use(Carousel);
+Vue.use(CarouselItem);
+Vue.use(Card);
+Vue.use(Drawer);
+Vue.use(Form);
+Vue.use(FormItem);
+Vue.use(Input);
+Vue.use(Radio);
+Vue.use(RadioGroup);
+Vue.use(RadioButton);
