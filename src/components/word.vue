@@ -7,10 +7,27 @@
             </el-radio-group>
         </div>
         
-        <div v-if="tabIndex === '0'">
-
+        <div v-if="tabIndex === '0'" class="contact-info">
+            <p class="name">浙江大树环保科技有限公司</p>
+            <div class="part-out">
+                <div class="part">
+                    <img src="@/assets/image/tel.jpg" />
+                    <p class="type">电话</p>
+                    <p>13956555555</p>
+                </div>
+                <div class="part">
+                    <img src="@/assets/image/email.jpg" />
+                    <p class="type">邮箱</p>
+                    <p>13956555555</p>
+                </div>
+                <div class="part">
+                    <img src="@/assets/image/email.jpg" />
+                    <p class="type">微信</p>
+                    <p>13956555555</p>
+                </div>
+            </div>
         </div>
-        <div v-if="tabIndex === '1'" class="tab-cont msg-form">
+        <div v-if="tabIndex === '1'" class="msg-form">
             <el-form :model="form" :rules="rules" ref="form" >
                 <el-form-item prop="name">
                     <el-input v-model="form.name">
@@ -63,6 +80,7 @@ export default {
                 desc: ''
             },
             rules: {
+                name: { required: true, message: '请输入姓名'},
                 email: [
                     { required: true, message: '请输入邮箱' },
                     { type: 'email', message: '邮箱格式不正确' }
@@ -73,18 +91,14 @@ export default {
         }
     },
     methods: {
-        writeNote() {
-            this.form = {
-                title: '',
-                desc: ''
-            }
-        },
         toAdd() {
             this.$refs.form.validate(valid => {
                 if (valid) {
                     this.loading = true
                     this.$ajax.post('msg/add', this.form, () => {
                         this.loading = false
+                        this.$message.success('留言提交成功！')
+                        this.$refs.form.resetFields()
                     })
                 }
             })
@@ -93,15 +107,37 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.tab-cont {
-    padding: 1rem;
-    margin: 0 auto;
-}
+.contact-info {
+    .part-out {
+        padding-bottom: 2rem;
+        justify-content: space-around;
+    }
+    .name {
+        font-size: 1.5rem;
+        text-align: center;
+        padding: 2rem 0;
+        font-weight: bold;
+    }
+    .part {
+        line-height: 2rem;
+        img {
+            width: 50%;
+            max-width: 50px;
+        }
+        .type {
+            font-size: 1.5rem;
+        }
+        text-align: center;
+        padding: 1rem;
+    }
+} 
 .btns {
     text-align: center;
     padding: 1rem 0;
 }
 .msg-form {
+    padding: 1rem;
+    margin: 0 auto;
     max-width: 600px;
 }
 </style>

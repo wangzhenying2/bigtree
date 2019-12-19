@@ -20,7 +20,8 @@ import {
     Input,
     Radio,
     RadioGroup,
-    RadioButton
+    RadioButton,
+    Message
 } from 'element-ui'
 
 Vue.use(Container);
@@ -44,3 +45,4 @@ Vue.use(Input);
 Vue.use(Radio);
 Vue.use(RadioGroup);
 Vue.use(RadioButton);
+Vue.prototype.$message = Message;

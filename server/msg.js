@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
-const query = require('./db.js')
+const query = require('./tools/db.js')
+const sendmail = require('./tools/email.js')
 
 // middleware that is specific to this router
 // router.use(function timeLog (req, res, next) {
@@ -10,8 +11,10 @@ const query = require('./db.js')
 
 // 新增
 router.post('/add', function (req, res) {
-    let param = [req.body.title, req.body.desc];
-    query('INSERT INTO notes(`title`,`desc`) VALUES (?,?)', param, function(err, result, fields) {
+    let body = req.body
+    // 存入数据库
+    let param = [[body.title, body.desc, body.name, body.company, body.tel, body.email]]
+    query('INSERT INTO notes(`title`,`desc`,`name`,`company`,`tel`,`email`) VALUES ?', [param], function(err, result, fields) {
         if (err){ 
             res.send({
                 success: false,
@@ -25,6 +28,17 @@ router.post('/add', function (req, res) {
         }
         res.end()
     });
+    // 发送邮件
+    sendmail({
+        subject: '[大树环保在线留言]' + body.title,
+        html: [
+            '<div>姓名：' + body.name + '</div>',
+            '<div>公司：' + body.company + '</div>',
+            '<div>电话：' + body.tel + '</div>',
+            '<div>email：' + body.email + '</div>',
+            '<div>' + body.desc + '</div>',
+        ].join('')
+    })
 });
 
 // 获取信息

@@ -6,6 +6,7 @@ Vue.use(VueRouter)
 const main = () => import('@c/common/main.vue')
 const index = () => import('@c/index.vue')
 const word = () => import('@c/word.vue')
+const prod = () => import('@c/prod.vue')
 
 export default new VueRouter({
     mode: 'history',
@@ -18,6 +19,9 @@ export default new VueRouter({
         }, {
             path: '/word',
             component: word
+        }, {
+            path: '/prod',
+            component: prod
         }]
     }]
 })
