@@ -2,12 +2,12 @@
     <div>
         <div class="btns">
             <el-radio-group v-model="tabIndex" size="small">
-                <el-radio-button label="0">德耐姆板材</el-radio-button>
+                <el-radio-button label="denamore">德耐姆板材</el-radio-button>
                 <el-radio-button label="1">宜人热被窝</el-radio-button>
             </el-radio-group>
         </div>
         
-        <div v-if="tabIndex === '0'" class="contact-info">
+        <div v-if="tabIndex === 'denamore'" class="contact-info">
             <el-card class="box-card">
                 <el-divider content-position="left">产品介绍</el-divider>
                 <div>
@@ -24,12 +24,21 @@
                     <p>★其他功能区墙面</p>
                 </div>
                 <el-divider content-position="left">产品展示</el-divider>
-                <div>
-                    
-                </div>
+                
+                <el-tabs v-model="tabIndexProd" class="prod-list">
+                    <el-tab-pane :label="item.type" :name="item.type" v-for="item in prodsList" :key="item.type">
+                        <div class="part-out">
+                            <div v-for="item1 in item.val" :key="item1.id" class="part">
+                                <img :src="item1.url"/>
+                                <p>{{item1.name}}</p>
+                            </div>
+                        </div>
+                    </el-tab-pane>
+                </el-tabs>
+                
             </el-card>
         </div>
-        <div v-if="tabIndex === '1'" class="msg-form">
+        <div v-if="tabIndex === '1'">
             
         </div>
 
@@ -39,7 +48,9 @@
 export default {
     data() {
         return {
-            tabIndex: '0',
+            prodsList: [],
+            tabIndex: 'denamore',
+            tabIndexProd: '',
             loading: false,
             form: {
                 name: '',
@@ -60,7 +71,28 @@ export default {
             }
         }
     },
+    mounted() {
+        this.init()
+    },
     methods: {
+        init() {
+            this.$ajax.post('prods/get', { type: this.tabIndex }, res => {
+                let obj = res.reduce((obj, item) => {
+                    if (!obj[item.typeSec]) {
+                        obj[item.typeSec] = []
+                    }
+                    obj[item.typeSec].push(item)
+                    return obj
+                }, {})
+                Object.keys(obj).forEach(item => {
+                    this.prodsList.push({
+                        type: item,
+                        val: obj[item]
+                    })
+                })
+                this.tabIndexProd = this.prodsList[0]['type']
+            })
+        },
         toAdd() {
             this.$refs.form.validate(valid => {
                 if (valid) {
@@ -77,37 +109,24 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.contact-info {
+.prod-list {
     .part-out {
-        padding-bottom: 2rem;
-        justify-content: space-around;
-    }
-    .name {
-        font-size: 1.5rem;
-        text-align: center;
-        padding: 2rem 0;
-        font-weight: bold;
-    }
-    .part {
-        line-height: 2rem;
-        img {
-            width: 50%;
-            max-width: 50px;
+        flex-flow: wrap;
+        .part {
+            width: 20%;
+            padding: 1rem;
+            img {
+                width: 100%;
+            }
+            .type {
+                font-size: 1.5rem;
+            }
         }
-        .type {
-            font-size: 1.5rem;
-        }
-        text-align: center;
-        padding: 1rem;
     }
+    
 } 
 .btns {
     text-align: center;
     padding: 1rem 0;
-}
-.msg-form {
-    padding: 1rem;
-    margin: 0 auto;
-    max-width: 600px;
 }
 </style>

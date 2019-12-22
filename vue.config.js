@@ -13,6 +13,9 @@ module.exports = {
             proxy: {
                 '/msg': {
                     target: 'http://localhost:3000'
+                },
+                '/prods': {
+                    target: 'http://localhost:3000'
                 }
             }
         }

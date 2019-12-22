@@ -21,7 +21,9 @@ import {
     Radio,
     RadioGroup,
     RadioButton,
-    Message
+    Message,
+    Tabs,
+    TabPane
 } from 'element-ui'
 
 Vue.use(Container);
@@ -45,4 +47,6 @@ Vue.use(Input);
 Vue.use(Radio);
 Vue.use(RadioGroup);
 Vue.use(RadioButton);
+Vue.use(Tabs);
+Vue.use(TabPane);
 Vue.prototype.$message = Message;

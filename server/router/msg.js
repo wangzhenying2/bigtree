@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
-const query = require('./tools/db.js')
-const sendmail = require('./tools/email.js')
+const query = require('../tools/db.js')
+const sendmail = require('../tools/email.js')
 
 // middleware that is specific to this router
 // router.use(function timeLog (req, res, next) {

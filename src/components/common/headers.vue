@@ -1,6 +1,6 @@
 <template>
     <div class="header part-out">
-		<!-- <div class="part"><img src="@/assets/logo.jpg" class="logo"/></div> -->
+		<div class="part"><img src="@/assets/logo.jpg" class="logo"/></div>
 		<div class="part">
 			<el-menu :default-active="this.$route.path" mode="horizontal" class="header-menu" active-text-color="#409EFF" >
 				<el-menu-item index="/">

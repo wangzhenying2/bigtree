@@ -56,7 +56,7 @@
             loader: 'E:\\example\\bigtree\\node_modules\\cache-loader\\dist\\cjs.js',
             options: {
               cacheDirectory: 'E:\\example\\bigtree\\node_modules\\.cache\\vue-loader',
-              cacheIdentifier: '4967e305'
+              cacheIdentifier: '86142ff6'
             }
           },
           {
@@ -66,7 +66,7 @@
                 whitespace: 'condense'
               },
               cacheDirectory: 'E:\\example\\bigtree\\node_modules\\.cache\\vue-loader',
-              cacheIdentifier: '4967e305'
+              cacheIdentifier: '86142ff6'
             }
           }
         ]
@@ -1000,7 +1000,7 @@
             loader: 'E:\\example\\bigtree\\node_modules\\cache-loader\\dist\\cjs.js',
             options: {
               cacheDirectory: 'E:\\example\\bigtree\\node_modules\\.cache\\babel-loader',
-              cacheIdentifier: 'e2a2431a'
+              cacheIdentifier: '6e223d15'
             }
           },
           {
@@ -1198,6 +1198,9 @@
   devServer: {
     proxy: {
       '/msg': {
+        target: 'http://localhost:3000'
+      },
+      '/prods': {
         target: 'http://localhost:3000'
       }
     }
