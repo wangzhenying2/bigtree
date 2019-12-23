@@ -12,7 +12,7 @@
 		<!-- part -->
 		<div class="layer">
 			<el-divider>关于我们</el-divider>
-			<div class="intro">
+			<div class="param">
 				<p>浙江大树环保科技有限公司：创立于2018年，注册资金叁仟万，坐落在风景优美的浙江杭州，西子之畔，主营环保类产品：家庭分布式取暖、水热座垫、水热毯、竹木纤维装饰板、生活用水水箱自动清洗消毒设备等环保业务，公司自成立以来经过辛勤耕耘和不懈努力，浙江大树环保科技有限公司不断发展壮大，已被业内外所认可和推崇，目前，公司已形成了以环保产品数据、行业分析报告等形式雄厚并极具潜力的环保服务品牌，公司发展逐步扩大，业务遍布各大省会及一、二线城市，已覆盖浙江、北京、上海、山东、杭州、南京、等多个城市，对接多家代理机构，为客户提供个性化综合服务方案。</p>
 				<p>公司以高标准、高起点的标准严格按照现代化企业的管理要求，对人力资源配置及机构设置进行了优化组合，着力将公司打造成一个管理规范、经营专业的现代化创新企业；并始终为客户提供最好的产品、优质的技术支持、健全的售后服务，同时为企业及个人提供“量体裁衣”一站式个性化服务。</p>
 				<p>浙江大树环保科技有限公司下设:总经办、办公室、销售部、财务中心、售后服务部、5大管理职能中心。</p>
@@ -21,15 +21,6 @@
 		</div>
 		<!-- part -->
 		<div class="bg1">
-			<el-divider>信息资讯</el-divider>
-			<div class="info">
-				<div>
-					<a href="" target="detail">了解护墙板</a>
-				</div>
-			</div>
-		</div>
-		<!-- part -->
-		<div>
 			<el-divider>主营业务</el-divider>
 			<div class="part-out prods">
 				<div class="part">
@@ -117,23 +108,8 @@ export default {
 			line-height: 1.5em;
 		}
 	}
-	.intro {
+	.param {
 		padding: 1rem;
-		p {
-			line-height: 1.5rem;
-			text-indent: 2em;
-			padding-bottom: 1em;
-		}
-	}
-	.info {
-		padding: 1rem;
-		a {
-			color: #333;
-			text-decoration: none;
-		}
-		a:hover {
-			text-decoration: underline;
-		}
 	}
 }
 </style>

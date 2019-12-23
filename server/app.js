@@ -8,7 +8,7 @@ const routerIndex = require('./router/index');
 
 // 抓数据
 const crawler = require('./crawler.js');
-// crawler()
+crawler()
 
 app.use(bodyParser.json()); // 处理以json格式的提交
 app.use(bodyParser.urlencoded({ extended: false })); // 处理以form表单的提交
