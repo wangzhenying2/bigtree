@@ -20,10 +20,10 @@ app.use('/', routerIndex)
 
 
 // 访问单页
-// app.get('/', function (req, res) {
-//     var html = fs.readFileSync(path.resolve(__dirname, '../dist/index.html'), 'utf-8');
-//     res.send(html);
-// });
+app.get('/', function (req, res) {
+    var html = fs.readFileSync(path.resolve(__dirname, '../dist/index.html'), 'utf-8');
+    res.send(html);
+});
 // 监听
 app.listen(3000, function () {
     console.log('success listen...3000');
