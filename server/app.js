@@ -25,6 +25,6 @@ app.get('/', function (req, res) {
     res.send(html);
 });
 // 监听
-app.listen(3000, '0.0.0.0', function () {
+app.listen(3000, function () {
     console.log('success listen...3000');
 });
