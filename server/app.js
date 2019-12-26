@@ -16,13 +16,14 @@ app.use(express.static(path.resolve(__dirname, '../dist'))); // 访问静态资�
 
 
 // 路由
-app.use('/', routerIndex)
+// app.use('/', routerIndex)
 
 
 // 访问单页
-app.get('/', function (req, res) {
-    var html = fs.readFileSync(path.resolve(__dirname, '../dist/index.html'), 'utf-8');
-    res.send(html);
+app.get('/test', function (req, res) {
+    // var html = fs.readFileSync(path.resolve(__dirname, '../dist/index.html'), 'utf-8');
+    // res.send(html);
+    res.send('test，哈哈哈哈');
 });
 // 监听
 app.listen(3000, function () {
