@@ -4,9 +4,9 @@
 const mysql = require("mysql");
 //创建数据库(连接池)
 const pool = mysql.createPool({
-    host: 'localhost',
+    host: '47.240.75.49',
     user: 'root',
-    password: '123456',
+    password: 'Wzy-159753',
     database: 'bigtree',
     charset: 'utf8mb4'
 });
