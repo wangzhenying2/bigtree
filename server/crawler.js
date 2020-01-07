@@ -62,7 +62,7 @@ function callback(type, type1, error, response, body) {
             // 插入表数据
             query('INSERT INTO prods(`type`,`typeSec`,`name`,`url`) VALUES ?', [arrData], function(err, val) {
                 if (err){ Promise.reject(err) }
-                console.log(`成功：${type}插入${val.affectedRows}条`)
+                // console.log(`成功：${type}插入${val.affectedRows}条`)
             });
         }).catch( err => {
             console.log('错误：' + err)
