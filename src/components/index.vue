@@ -113,6 +113,7 @@ export default {
 	}
 	.param {
 		padding: 1rem;
+		text-align: justify;
 	}
 }
 </style>
