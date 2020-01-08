@@ -22,7 +22,7 @@
 		<!-- part -->
 		<div class="bg1">
 			<el-divider>主营业务</el-divider>
-			<div class="part-out prods">
+			<div class="prods">
 				<div class="part">
 					<el-card>
 						<img :src="prods[0]" width="100%">
@@ -99,7 +99,7 @@ export default {
 	}
 	.prods {
 		.part {
-			margin: 0.5rem;
+			margin: 2rem;
 		}
 		strong {
 			line-height: 2em;

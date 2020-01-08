@@ -8,8 +8,7 @@
         </div>
         
         <div v-if="tabIndex === '0'" class="contact-info">
-            <el-divider class="name-out"><span class="name">浙江大树环保科技有限公司</span></el-divider>
-            
+            <div class="name">浙江大树环保科技有限公司</div>
             <div class="part-out">
                 <div class="part">
                     <img src="@/assets/image/tel.jpg" />
@@ -109,17 +108,15 @@ export default {
 </script>
 <style lang="scss" scoped>
 .contact-info {
+    padding: 0.5rem;
     .part-out {
         padding-bottom: 2rem;
         justify-content: space-around;
     }
-    .name-out {
-        margin: 3rem 0;
-    }
     .name {
-        font-size: 1.5rem;
+        font-size: 1rem;
         text-align: center;
-        
+        padding: 1rem 0;
         font-weight: bold;
     }
     .part {
