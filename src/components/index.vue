@@ -2,7 +2,7 @@
 	<div class="conts">
 		<!-- 图片切换 -->
 		<div>
-			<el-carousel indicator-position="outside">
+			<el-carousel indicator-position="outside" :height="height">
 				<el-carousel-item v-for="item in flash" :key="item">
 					<img :src="item" width="100%"/>
 				</el-carousel-item>
@@ -62,6 +62,7 @@ export default {
 	name: 'index',
 	data() {
 		return {
+			height: '',
 			flash: [ flash1, flash2, flash3, flash4 ],
 			prods: [ snd, yr ],
 			list: [],
@@ -74,6 +75,8 @@ export default {
 		}
 	},
 	mounted() {
+		// 默认设置图片的高度是宽度的1/3
+		this.height = document.body.clientWidth / 3 + 'px'
 		// this.getList()
 	},
 	methods: {

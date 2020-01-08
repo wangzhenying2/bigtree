@@ -53,12 +53,14 @@
                 </div>
                 <el-divider content-position="left">产品展示</el-divider>
                 
-                <el-tabs v-model="tabIndexProd" class="prod-list">
+                <el-tabs v-model="tabIndexProd" class="prod-list yrrbw">
                     <el-tab-pane :label="sets.yrrbwConf[item.type]" :name="item.type" v-for="item in prodsList" :key="item.type">
                         <div class="part-out">
                             <div v-for="item1 in item.val" :key="item1.id" class="part" @click="toPreview(item1.url)">
-                                <img :src="item1.url"/>
-                                <p>{{item1.name}}</p>
+                                <div>
+                                    <img :src="item1.url"/>
+                                    <p>{{item1.name}}</p>
+                                </div>
                             </div>
                         </div>
                     </el-tab-pane>
@@ -141,11 +143,16 @@ export default {
         align-items: flex-start;
     }
 }
+.yrrbw {
+    .part-out {
+        align-items: flex-end;
+    }
+}
 .prod-list {
     .part-out {
         flex-flow: wrap;
         justify-content: flex-start;
-        align-items: flex-end;
+        
         .part {
             cursor: pointer;
             width: 25%;
