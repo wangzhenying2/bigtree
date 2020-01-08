@@ -7,7 +7,7 @@
             </el-radio-group>
         </div>
         
-        <div v-if="tabIndex === 'denamore'" class="contact-info">
+        <div v-if="tabIndex === 'denamore'">
             <el-card class="box-card">
                 <el-divider content-position="left">产品介绍</el-divider>
                 <div class="param">
@@ -25,12 +25,14 @@
                 </div>
                 <el-divider content-position="left">产品展示</el-divider>
                 
-                <el-tabs v-model="tabIndexProd" class="prod-list">
+                <el-tabs v-model="tabIndexProd" class="prod-list denamore">
                     <el-tab-pane :label="sets.denamoreConf[item.type]" :name="item.type" v-for="item in prodsList" :key="item.type">
                         <div class="part-out">
                             <div v-for="item1 in item.val" :key="item1.id" class="part" @click="toPreview(item1.url)">
-                                <img :src="item1.url"/>
-                                <p>{{item1.name}}</p>
+                                <div>
+                                    <img :src="item1.url"/>
+                                    <p>{{item1.name}}</p>
+                                </div>
                             </div>
                         </div>
                     </el-tab-pane>
@@ -134,6 +136,11 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+.denamore {
+    .part-out {
+        align-items: flex-start;
+    }
+}
 .prod-list {
     .part-out {
         flex-flow: wrap;
@@ -141,8 +148,10 @@ export default {
         align-items: flex-end;
         .part {
             cursor: pointer;
-            width: 20%;
-            padding: 1rem;
+            width: 25%;
+            div {
+                padding: 0.5rem;
+            }
             img {
                 width: 100%;
             }
