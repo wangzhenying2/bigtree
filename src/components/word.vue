@@ -2,32 +2,10 @@
     <div>
         <div class="btns">
             <el-radio-group v-model="tabIndex" size="small">
-                <el-radio-button label="0">联系我们</el-radio-button>
-                <el-radio-button label="1">在线留言</el-radio-button>
+                <el-radio-button label="0">在线留言</el-radio-button>
             </el-radio-group>
         </div>
-        
-        <div v-if="tabIndex === '0'" class="contact-info">
-            <div class="name">浙江大树环保科技有限公司</div>
-            <div class="part-out">
-                <div class="part">
-                    <img src="@/assets/image/tel.jpg" />
-                    <p class="type">电话</p>
-                    <p>13956555555</p>
-                </div>
-                <div class="part">
-                    <img src="@/assets/image/email.jpg" />
-                    <p class="type">邮箱</p>
-                    <p>13956555555</p>
-                </div>
-                <div class="part">
-                    <img src="@/assets/image/email.jpg" />
-                    <p class="type">微信</p>
-                    <p>13956555555</p>
-                </div>
-            </div>
-        </div>
-        <div v-if="tabIndex === '1'" class="msg-form">
+        <div v-if="tabIndex === '0'" class="msg-form">
             <el-form :model="form" :rules="rules" ref="form" >
                 <el-form-item prop="name">
                     <el-input v-model="form.name">
@@ -107,31 +85,6 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.contact-info {
-    padding: 0.5rem;
-    .part-out {
-        padding-bottom: 2rem;
-        justify-content: space-around;
-    }
-    .name {
-        font-size: 1rem;
-        text-align: center;
-        padding: 1rem 0;
-        font-weight: bold;
-    }
-    .part {
-        line-height: 2rem;
-        img {
-            width: 50%;
-            max-width: 50px;
-        }
-        .type {
-            font-size: 1.5rem;
-        }
-        text-align: center;
-        padding: 1rem;
-    }
-} 
 .btns {
     text-align: center;
     padding: 1rem 0;
