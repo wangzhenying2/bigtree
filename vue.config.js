@@ -11,10 +11,7 @@ module.exports = {
         },
         devServer: {
             proxy: {
-                '/msg': {
-                    target: 'http://127.0.0.1:3000'
-                },
-                '/prods': {
+                '/yrrbw': {
                     target: 'http://127.0.0.1:3000'
                 }
             }

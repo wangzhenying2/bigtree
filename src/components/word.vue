@@ -73,7 +73,7 @@ export default {
             this.$refs.form.validate(valid => {
                 if (valid) {
                     this.loading = true
-                    this.$ajax.post('msg/add', this.form, () => {
+                    this.$ajax.post('yrrbw/add', this.form, () => {
                         this.loading = false
                         this.$message.success('留言提交成功！')
                         this.$refs.form.resetFields()

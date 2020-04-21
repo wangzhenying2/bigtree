@@ -110,7 +110,7 @@ export default {
     methods: {
         init() {
             this.prodsList = []
-            this.$ajax.post('prods/get', { type: this.tabIndex }, res => {
+            this.$ajax.post('yrrbw/get', { type: this.tabIndex }, res => {
                 let obj = res.reduce((obj, item) => {
                     if (!obj[item.typeSec]) {
                         obj[item.typeSec] = []
